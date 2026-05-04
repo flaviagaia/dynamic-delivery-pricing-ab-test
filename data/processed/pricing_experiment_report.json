@@ -1,0 +1,132 @@
+{
+  "dataset_source": "synthetic_dynamic_delivery_pricing_experiment",
+  "session_count": 1500,
+  "variant_counts": {
+    "control": 741,
+    "treatment": 759
+  },
+  "experiment_design": {
+    "unit_of_randomization": "checkout_session",
+    "treatment_description": "Dynamic delivery-fee policy with lower fees for price-sensitive sessions and mild peak adjustment elsewhere",
+    "primary_metric": "contribution_margin_per_session",
+    "secondary_metrics": [
+      "net_completed_order_rate",
+      "avg_delivery_fee"
+    ],
+    "guardrails": [
+      "checkout_conversion_rate",
+      "cancellation_rate"
+    ]
+  },
+  "metrics": {
+    "primary_metric_contribution_margin_per_session": {
+      "control": 7.2306,
+      "treatment": 7.0337,
+      "absolute_lift": -0.1969,
+      "relative_lift_pct": -2.72,
+      "ci_low": -0.3816,
+      "ci_high": -0.0122
+    },
+    "secondary_metric_net_completed_order_rate": {
+      "control": 0.5371,
+      "treatment": 0.5613,
+      "absolute_lift": 0.0242,
+      "relative_lift_pct": 4.5,
+      "ci_low": -0.0262,
+      "ci_high": 0.0745
+    },
+    "secondary_metric_avg_delivery_fee": {
+      "control": 4.4879,
+      "treatment": 4.2859,
+      "absolute_lift": -0.202,
+      "relative_lift_pct": -4.5,
+      "ci_low": -0.2577,
+      "ci_high": -0.1462
+    },
+    "guardrail_checkout_conversion_rate": {
+      "control": 0.5668,
+      "treatment": 0.6008,
+      "absolute_lift": 0.034,
+      "relative_lift_pct": 6.0,
+      "ci_low": -0.0159,
+      "ci_high": 0.0839
+    },
+    "guardrail_cancellation_rate": {
+      "control": 0.0297,
+      "treatment": 0.0395,
+      "absolute_lift": 0.0098,
+      "relative_lift_pct": 33.13,
+      "ci_low": -0.0087,
+      "ci_high": 0.0283
+    }
+  },
+  "segment_lifts_by_region": {
+    "east": {
+      "control": 7.157,
+      "treatment": 6.9843,
+      "absolute_lift": -0.1727,
+      "relative_lift_pct": -2.41,
+      "ci_low": -0.5352,
+      "ci_high": 0.1898
+    },
+    "north": {
+      "control": 7.2679,
+      "treatment": 6.8551,
+      "absolute_lift": -0.4129,
+      "relative_lift_pct": -5.68,
+      "ci_low": -0.7735,
+      "ci_high": -0.0523
+    },
+    "south": {
+      "control": 7.1545,
+      "treatment": 7.0631,
+      "absolute_lift": -0.0913,
+      "relative_lift_pct": -1.28,
+      "ci_low": -0.4716,
+      "ci_high": 0.2889
+    },
+    "west": {
+      "control": 7.3459,
+      "treatment": 7.2341,
+      "absolute_lift": -0.1117,
+      "relative_lift_pct": -1.52,
+      "ci_low": -0.4877,
+      "ci_high": 0.2643
+    }
+  },
+  "segment_lifts_by_user_segment": {
+    "casual": {
+      "control": 7.1167,
+      "treatment": 7.2738,
+      "absolute_lift": 0.157,
+      "relative_lift_pct": 2.21,
+      "ci_low": -0.1685,
+      "ci_high": 0.4826
+    },
+    "power_user": {
+      "control": 7.3064,
+      "treatment": 7.0929,
+      "absolute_lift": -0.2135,
+      "relative_lift_pct": -2.92,
+      "ci_low": -0.5265,
+      "ci_high": 0.0995
+    },
+    "price_sensitive": {
+      "control": 7.2738,
+      "treatment": 6.7422,
+      "absolute_lift": -0.5316,
+      "relative_lift_pct": -7.31,
+      "ci_low": -0.851,
+      "ci_high": -0.2122
+    }
+  },
+  "recommendation": {
+    "decision": "needs_iteration",
+    "reasoning": [
+      "Contribution margin per exposed session is the main pricing metric because it balances revenue capture and conversion impact.",
+      "Checkout conversion is a guardrail because pricing changes that hurt demand too much can destroy marketplace health.",
+      "Cancellation rate is a guardrail because poor pricing can create low-quality orders that fail downstream."
+    ]
+  },
+  "report_artifact": "/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/dynamic-delivery-pricing-ab-test/data/processed/pricing_experiment_report.json"
+}
