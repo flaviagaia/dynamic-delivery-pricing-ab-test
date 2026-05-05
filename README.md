@@ -58,6 +58,21 @@ Essa referência é usada apenas para inspirar variáveis comportamentais de mar
    - segmento de usuário
 7. devolve recomendação final de rollout.
 
+## Desenho experimental
+
+### Unidade de randomização
+
+- `checkout_session`
+
+### Hipótese de produto
+
+- reduzir fee em alguns contextos pode melhorar conversão;
+- mas o experimento só é bom se a melhoria de demanda compensar a erosão de monetização unitária.
+
+### Pergunta causal principal
+
+- a nova política de delivery fee melhora `contribution_margin_per_session`?
+
 ## Métrica principal
 
 - `contribution_margin_per_session`
@@ -71,6 +86,12 @@ Essa referência é usada apenas para inspirar variáveis comportamentais de mar
 
 - `checkout_conversion_rate`
 - `cancellation_rate`
+
+Esses guardrails são importantes porque pricing pode:
+
+- melhorar top-of-funnel;
+- mas atrair pedidos economicamente ruins;
+- ou aumentar cancelamento se a política gerar mismatch entre preço, expectativa e operação.
 
 ## Estrutura dos dados
 
@@ -94,6 +115,17 @@ Cada linha representa uma sessão de checkout com campos como:
 - `gross_revenue`
 - `contribution_margin`
 
+Semântica analítica dos campos principais:
+
+- `delivery_fee`
+  - preço exposto ao cliente
+- `variable_cost`
+  - custo operacional variável para atender a sessão convertida
+- `gross_revenue`
+  - monetização bruta da plataforma naquela sessão
+- `contribution_margin`
+  - métrica econômica final usada no benchmark
+
 ## Técnicas utilizadas
 
 - simulação de experimento A/B
@@ -112,6 +144,18 @@ Cada linha representa uma sessão de checkout com campos como:
 - `pathlib`
 - `random`
 - `unittest`
+
+## Contrato do relatório
+
+O artefato [pricing_experiment_report.json](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/dynamic-delivery-pricing-ab-test/data/processed/pricing_experiment_report.json) expõe:
+
+- desenho do experimento
+- primary metric
+- secondary metrics
+- guardrails
+- análise por região
+- análise por segmento de usuário
+- decisão final `ship_treatment` ou `needs_iteration`
 
 ## Arquivos principais
 
