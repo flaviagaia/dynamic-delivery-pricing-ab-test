@@ -4,7 +4,7 @@
 
 ### Visão geral
 
-`dynamic-delivery-pricing-ab-test` é um projeto de experimentação de pricing para marketplace, inspirado em uma pergunta clássica de entrevista: **como desenhar e avaliar uma nova estratégia de precificação de entrega**.
+`dynamic-delivery-pricing-ab-test` é um projeto de experimentação de pricing para marketplace focado em desenhar e avaliar uma nova estratégia de precificação de entrega.
 
 O experimento compara:
 
@@ -85,7 +85,7 @@ Cada linha representa uma sessão com campos como:
 
 ### Contrato do relatório
 
-O artefato [pricing_experiment_report.json](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/dynamic-delivery-pricing-ab-test/data/processed/pricing_experiment_report.json) expõe:
+O artefato [pricing_experiment_report.json](data/processed/pricing_experiment_report.json) expõe:
 
 - desenho do experimento
 - primary metric
@@ -115,10 +115,10 @@ Leitura honesta:
 
 ### Arquivos principais
 
-- [main.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/dynamic-delivery-pricing-ab-test/main.py)
-- [src/data_factory.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/dynamic-delivery-pricing-ab-test/src/data_factory.py)
-- [src/modeling.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/dynamic-delivery-pricing-ab-test/src/modeling.py)
-- [tests/test_project.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/dynamic-delivery-pricing-ab-test/tests/test_project.py)
+- [main.py](main.py)
+- [src/data_factory.py](src/data_factory.py)
+- [src/modeling.py](src/modeling.py)
+- [tests/test_project.py](tests/test_project.py)
 
 ### Como executar
 
@@ -128,15 +128,12 @@ python3 -m unittest discover -s tests -v
 python3 -m py_compile main.py src/data_factory.py src/modeling.py tests/test_project.py
 ```
 
-### Como defender em entrevista
-
-> Eu desenharia o experimento com randomização por sessão de checkout, usaria contribution margin por sessão exposta como métrica principal e manteria conversão e cancelamento como guardrails. O ponto central é provar se a política melhora a economia do marketplace, não só a demanda.
 
 ## English
 
 ### Overview
 
-`dynamic-delivery-pricing-ab-test` is a marketplace pricing experimentation project built around a common interview question: **how to design and evaluate a new delivery pricing strategy**.
+`dynamic-delivery-pricing-ab-test` is a marketplace pricing experimentation project focused on designing and evaluating a new delivery pricing strategy.
 
 The experiment compares:
 
@@ -217,7 +214,7 @@ Each row represents one session with fields such as:
 
 ### Report contract
 
-The artifact [pricing_experiment_report.json](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/dynamic-delivery-pricing-ab-test/data/processed/pricing_experiment_report.json) includes:
+The artifact [pricing_experiment_report.json](data/processed/pricing_experiment_report.json) includes:
 
 - experiment design
 - primary metric
@@ -240,10 +237,10 @@ The artifact [pricing_experiment_report.json](/Users/flaviagaia/Documents/CV_FLA
 
 ### Main files
 
-- [main.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/dynamic-delivery-pricing-ab-test/main.py)
-- [src/data_factory.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/dynamic-delivery-pricing-ab-test/src/data_factory.py)
-- [src/modeling.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/dynamic-delivery-pricing-ab-test/src/modeling.py)
-- [tests/test_project.py](/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/dynamic-delivery-pricing-ab-test/tests/test_project.py)
+- [main.py](main.py)
+- [src/data_factory.py](src/data_factory.py)
+- [src/modeling.py](src/modeling.py)
+- [tests/test_project.py](tests/test_project.py)
 
 ### How to run
 
@@ -252,7 +249,3 @@ python3 main.py
 python3 -m unittest discover -s tests -v
 python3 -m py_compile main.py src/data_factory.py src/modeling.py tests/test_project.py
 ```
-
-### Interview framing
-
-> I would randomize at the checkout-session level, use contribution margin per exposed session as the primary metric, and keep conversion and cancellation as guardrails. The key question is whether the policy improves marketplace economics, not just demand.

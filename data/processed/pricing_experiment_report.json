@@ -128,5 +128,5 @@
       "Cancellation rate is a guardrail because poor pricing can create low-quality orders that fail downstream."
     ]
   },
-  "report_artifact": "/Users/flaviagaia/Documents/CV_FLAVIA_CODEX/dynamic-delivery-pricing-ab-test/data/processed/pricing_experiment_report.json"
+  "report_artifact": "data/processed/pricing_experiment_report.json"
 }
